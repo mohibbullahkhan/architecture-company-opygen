@@ -21,7 +21,7 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
 
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
+      <Navbar theme="light" />
 
       <article className="pt-32 pb-24 px-6 md:px-10 max-w-4xl mx-auto">
         <motion.div 

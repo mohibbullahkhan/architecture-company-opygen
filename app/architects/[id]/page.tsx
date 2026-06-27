@@ -21,7 +21,7 @@ export default function ArchitectPage({ params }: { params: { id: string } }) {
 
   return (
     <main className="min-h-screen bg-[#f9f9f9]">
-      <Navbar />
+      <Navbar theme="light" />
 
       <section className="pt-32 pb-24 px-6 md:px-10 max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-start">
