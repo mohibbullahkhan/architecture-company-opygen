@@ -9,9 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#1a1a1a",
+        accent: "#c0392b",
+        bg: "#f5f4f0",
+        card: "#ffffff",
+        muted: "#6b7280",
       },
+      fontFamily: {
+        display: ["var(--font-playfair)", "serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+      },
+      borderRadius: {
+        none: "0",
+        full: "9999px",
+      }
     },
   },
   plugins: [],
