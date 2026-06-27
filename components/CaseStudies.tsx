@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const caseStudies = [
   {
@@ -50,7 +51,7 @@ export function CaseStudies() {
 
         {/* Case Studies List */}
         <div className="w-full flex flex-col">
-          {caseStudies.map((study, index) => (
+          {caseStudies.map((study) => (
             <div key={study.id} className="w-full flex flex-col">
               
               <hr className="border-t border-gray-300" />
@@ -70,12 +71,12 @@ export function CaseStudies() {
                     {study.description}
                   </p>
                   
-                  <button className="flex items-center gap-[24px] border-[1.5px] border-[#1a1a1a] rounded-full p-1 pl-6 hover:bg-[#1a1a1a] hover:text-white transition-colors group w-fit mt-6 md:mt-8">
+                  <Link href={`/case-studies/${study.id}`} className="flex items-center gap-[24px] border-[1.5px] border-[#1a1a1a] rounded-full p-1 pl-6 hover:bg-[#1a1a1a] hover:text-white transition-colors group w-fit mt-6 md:mt-8">
                     <span className="text-current text-[11px] font-bold tracking-wide">View more</span>
                     <div className="bg-[#1a1a1a] rounded-full w-[34px] h-[34px] flex items-center justify-center group-hover:bg-white transition-colors">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white group-hover:text-[#1a1a1a]" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                     </div>
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Right Col (Image) */}

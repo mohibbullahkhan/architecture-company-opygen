@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { useGetProjectsQuery } from '@/store/api/constructionApi';
@@ -29,8 +30,7 @@ export default function ProjectsPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#f9f9f9] to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-black/50" />
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -96,58 +96,50 @@ export default function ProjectsPage() {
                     transition={{ duration: 0.5, delay: (idx % 6) * 0.1 }}
                     className="group relative flex flex-col cursor-pointer overflow-hidden rounded-[32px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.12)] transition-shadow duration-500 aspect-[4/5] w-full"
                   >
-                    {/* Image */}
-                    <div className="absolute inset-0 w-full h-full overflow-hidden">
-                      <Image
-                        src={project.image}
-                        alt={project.name}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-[0.25,1,0.5,1]"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    </div>
-                    
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/95 via-[#1a1a1a]/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                    
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
-                      <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[0.25,1,0.5,1]">
-                        <h3 className="text-[20px] font-bold text-white mb-2 tracking-tight font-sans">
-                          {project.name}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <div className="h-[1px] w-4 bg-[#e74c3c] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 delay-100 ease-[0.25,1,0.5,1]" />
-                          <p className="text-[13px] text-gray-300 font-medium tracking-wide opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-500 delay-100 ease-[0.25,1,0.5,1]">
-                            {project.location}
-                          </p>
+                    <Link href={`/projects/${project.id}`} className="block w-full h-full relative">
+                      {/* Image */}
+                      <div className="absolute inset-0 w-full h-full overflow-hidden">
+                        <Image
+                          src={project.image}
+                          alt={project.name}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-[0.25,1,0.5,1]"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
+                      </div>
+                      
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/95 via-[#1a1a1a]/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                      
+                      {/* Content */}
+                      <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end pointer-events-none">
+                        <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[0.25,1,0.5,1]">
+                          <h3 className="text-[20px] font-bold text-white mb-2 tracking-tight font-sans">
+                            {project.name}
+                          </h3>
+                          <div className="flex items-center gap-3">
+                            <div className="h-[1px] w-4 bg-[#e74c3c] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 delay-100 ease-[0.25,1,0.5,1]" />
+                            <p className="text-[13px] text-gray-300 font-medium tracking-wide opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-500 delay-100 ease-[0.25,1,0.5,1]">
+                              {project.location}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    {/* Category Badge */}
-                    <div className="absolute top-6 right-6">
-                      <span className="bg-white/20 backdrop-blur-md text-white border border-white/30 rounded-full px-4 py-1.5 text-[11px] font-bold tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        {project.category}
-                      </span>
-                    </div>
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-6 right-6">
+                        <span className="bg-white/20 backdrop-blur-md text-white border border-white/30 rounded-full px-4 py-1.5 text-[11px] font-bold tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          {project.category}
+                        </span>
+                      </div>
+                    </Link>
 
                   </motion.div>
                 ))}
               </AnimatePresence>
             </motion.div>
             
-            {/* Load More Button */}
-            {projects && projects.length > 0 && (
-              <div className="mt-20 flex justify-center">
-                <button className="flex items-center gap-[24px] border-[1.5px] border-[#1a1a1a] rounded-full p-1.5 pl-8 hover:bg-[#1a1a1a] hover:text-white transition-colors duration-500 group h-fit">
-                  <span className="text-current text-[13px] font-bold tracking-wide">Load More Projects</span>
-                  <div className="bg-[#1a1a1a] rounded-full w-[44px] h-[44px] flex items-center justify-center group-hover:bg-white transition-colors duration-500">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white group-hover:text-[#1a1a1a]" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14m-7-7h14"/></svg>
-                  </div>
-                </button>
-              </div>
-            )}
+
           </>
         )}
       </section>

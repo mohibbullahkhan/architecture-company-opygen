@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ProjectCategoriesHeroProps {
   line1?: string;
@@ -114,12 +115,12 @@ export function ProjectCategoriesHero({
               </AnimatePresence>
             </div>
             
-            <button className="mt-4 md:mt-8 flex items-center gap-[16px] md:gap-[24px] border-[1.5px] border-white/30 rounded-full p-1.5 pl-6 md:pl-8 hover:bg-white/10 hover:border-white transition-all duration-300 group w-fit">
+            <Link href="/projects" className="mt-4 md:mt-8 flex items-center gap-[16px] md:gap-[24px] border-[1.5px] border-white/30 rounded-full p-1.5 pl-6 md:pl-8 hover:bg-white/10 hover:border-white transition-all duration-300 group w-fit">
               <span className="text-white text-[12px] md:text-[13px] font-bold tracking-wide">Explore All Projects</span>
               <div className="bg-white rounded-full w-[36px] h-[36px] md:w-[46px] md:h-[46px] flex items-center justify-center group-hover:scale-105 transition-transform">
                 <svg width="16" height="16" className="md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-            </button>
+            </Link>
           </motion.div>
         </div>
 

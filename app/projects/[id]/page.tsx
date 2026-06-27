@@ -5,26 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { useGetProjectByIdQuery, useGetRelatedProjectsQuery } from '@/store/api/constructionApi';
+import { projects } from '@/app/api/projects/data';
 
 export default function SingleProjectPage({ params }: { params: { id: string } }) {
-  const { data: project, isLoading } = useGetProjectByIdQuery(params.id);
-  const { data: relatedProjects } = useGetRelatedProjectsQuery(project?.category || '', {
-    skip: !project?.category,
-  });
-
-  if (isLoading) {
-    return (
-      <main className="min-h-screen bg-white flex items-center justify-center">
-        <p className="text-gray-500 font-medium">Loading project...</p>
-      </main>
-    );
-  }
+  // Use static data instead of RTK Query
+  const project = projects.find(p => p.id === params.id || p.id === String(params.id));
+  const relatedProjects = projects.filter(p => p.category === project?.category && p.id !== project?.id).slice(0, 3);
 
   if (!project) {
     return (
       <main className="min-h-screen bg-white flex items-center justify-center">
-        <p className="text-gray-500 font-medium">Project not found.</p>
+        <Navbar />
+        <p className="text-gray-500 font-medium text-2xl mt-20">Project not found.</p>
       </main>
     );
   }

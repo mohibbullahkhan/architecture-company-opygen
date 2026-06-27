@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import Link from 'next/link';
 import { useGetBlogPostsQuery } from '@/store/api/constructionApi';
 
 export default function BlogPage() {
@@ -72,12 +73,12 @@ export default function BlogPage() {
                 {featuredPost.excerpt}
               </p>
               
-              <button className="flex items-center gap-[24px] border-[1.5px] border-[#1a1a1a] rounded-full p-1 pl-6 hover:bg-gray-50 transition-colors group w-fit">
+              <Link href={`/blog/${featuredPost.id}`} className="flex items-center gap-[24px] border-[1.5px] border-[#1a1a1a] rounded-full p-1 pl-6 hover:bg-gray-50 transition-colors group w-fit">
                 <span className="text-[#1a1a1a] text-[11px] font-bold tracking-wide">Read More</span>
                 <div className="bg-[#1a1a1a] rounded-full w-[34px] h-[34px] flex items-center justify-center">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                 </div>
-              </button>
+              </Link>
             </div>
             
           </div>
@@ -92,9 +93,9 @@ export default function BlogPage() {
       <section className="py-16 px-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {gridPosts?.map((post, idx) => (
-            <motion.div 
-              key={post.id}
-              className="flex flex-col group cursor-pointer"
+            <Link key={post.id} href={`/blog/${post.id}`} className="block">
+              <motion.div 
+                className="flex flex-col group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -129,7 +130,8 @@ export default function BlogPage() {
                 <span className="underline decoration-2 underline-offset-4">Read More</span>
                 <span className="text-lg leading-none">›</span>
               </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </section>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const slides = [
   {
@@ -97,12 +98,12 @@ export function Hero() {
                     {slide.title2}<span className="text-[#e74c3c] absolute bottom-[10px] md:bottom-[24px] -right-[5px] md:-right-[12px] text-[20px] md:text-[40px] leading-none font-sans font-bold">.</span>
                   </span>
                   
-                  <button className="relative -top-[4px] md:-top-[16px] left-[10px] md:left-[20px] flex items-center gap-[12px] md:gap-[24px] border-[1.5px] border-white/80 rounded-full p-1 md:p-1.5 pl-4 md:pl-8 hover:bg-white/10 transition-colors group bg-white/5 backdrop-blur-sm shadow-lg">
+                  <Link href="/contact" className="relative -top-[4px] md:-top-[16px] left-[10px] md:left-[20px] flex items-center gap-[12px] md:gap-[24px] border-[1.5px] border-white/80 rounded-full p-1 md:p-1.5 pl-4 md:pl-8 hover:bg-white/10 transition-colors group bg-white/5 backdrop-blur-sm shadow-lg">
                     <span className="text-white text-[11px] md:text-[14px] font-semibold tracking-wide hidden sm:block">Contact us</span>
                     <div className="bg-white rounded-full w-[36px] h-[36px] md:w-[46px] md:h-[46px] flex items-center justify-center">
                       <svg width="16" height="16" className="md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                     </div>
-                  </button>
+                  </Link>
                 </div>
               </h1>
             </div>

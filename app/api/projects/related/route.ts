@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { projects } from '../route';
+import { projects } from '../data';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

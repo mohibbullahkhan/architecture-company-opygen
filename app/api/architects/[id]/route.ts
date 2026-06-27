@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { architects } from '../route';
+import { architects } from '../data';
 
 export async function GET(
   request: Request,

@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const projects = [
   {
@@ -15,7 +16,7 @@ const projects = [
     id: 2,
     title: 'Easy Tower Central',
     author: 'Cindy Natelia',
-    image: 'https://images.unsplash.com/photo-1577983084323-2895690b201a?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 3,
@@ -42,47 +43,49 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
   const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
-    <motion.div 
-      ref={ref}
-      className={`group relative w-full aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] cursor-pointer ${index % 2 !== 0 ? 'md:translate-y-16' : ''}`}
-      initial={{ opacity: 0, y: 80 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }} // smooth spring-like easing
-    >
-      {/* Image with Parallax */}
-      <motion.div style={{ y }} className="absolute inset-0 w-full h-[130%] -top-[15%]">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-cover transition-transform duration-1000 ease-[0.25,1,0.5,1] group-hover:scale-[1.08]"
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-        />
-      </motion.div>
-      
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/95 via-[#1a1a1a]/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-700 ease-in-out" />
-      
-      {/* Content */}
-      <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 flex flex-col translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[0.25,1,0.5,1]">
-        <motion.div
-          initial={false}
-          className="overflow-hidden"
-        >
-          <h3 className="text-[18px] md:text-[22px] font-bold text-white mb-2 tracking-tight font-sans">
-            {project.title}
-          </h3>
+    <Link href={`/projects/${project.id}`} className={`block w-full ${index % 2 !== 0 ? 'md:translate-y-16' : ''}`}>
+      <motion.div 
+        ref={ref}
+        className={`group relative w-full aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] cursor-pointer`}
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }} // smooth spring-like easing
+      >
+        {/* Image with Parallax */}
+        <motion.div style={{ y }} className="absolute inset-0 w-full h-[130%] -top-[15%]">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-1000 ease-[0.25,1,0.5,1] group-hover:scale-[1.08]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
         </motion.div>
         
-        <div className="flex items-center gap-3 overflow-hidden">
-          <div className="h-[1px] w-4 bg-[#e74c3c] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 delay-100 ease-[0.25,1,0.5,1]" />
-          <p className="text-[13px] md:text-[14px] text-gray-300 font-medium tracking-wide opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-500 delay-100 ease-[0.25,1,0.5,1]">
-            by {project.author}
-          </p>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/95 via-[#1a1a1a]/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-700 ease-in-out" />
+        
+        {/* Content */}
+        <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 flex flex-col translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-[0.25,1,0.5,1]">
+          <motion.div
+            initial={false}
+            className="overflow-hidden"
+          >
+            <h3 className="text-[18px] md:text-[22px] font-bold text-white mb-2 tracking-tight font-sans">
+              {project.title}
+            </h3>
+          </motion.div>
+          
+          <div className="flex items-center gap-3 overflow-hidden">
+            <div className="h-[1px] w-4 bg-[#e74c3c] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 delay-100 ease-[0.25,1,0.5,1]" />
+            <p className="text-[13px] md:text-[14px] text-gray-300 font-medium tracking-wide opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-500 delay-100 ease-[0.25,1,0.5,1]">
+              by {project.author}
+            </p>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 }
 
@@ -141,12 +144,12 @@ export function RecentProjects() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <button className="flex items-center gap-[24px] border-[1.5px] border-[#1a1a1a] rounded-full p-1.5 pl-8 hover:bg-[#1a1a1a] hover:text-white transition-colors duration-500 group h-fit">
+            <Link href="/projects" className="flex items-center gap-[24px] border-[1.5px] border-[#1a1a1a] rounded-full p-1.5 pl-8 hover:bg-[#1a1a1a] hover:text-white transition-colors duration-500 group h-fit">
               <span className="text-current text-[13px] font-bold tracking-wide">View All</span>
               <div className="bg-[#1a1a1a] rounded-full w-[44px] h-[44px] flex items-center justify-center group-hover:bg-white group-hover:border-white transition-colors duration-500">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white group-hover:text-[#1a1a1a]" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-            </button>
+            </Link>
           </motion.div>
 
         </div>

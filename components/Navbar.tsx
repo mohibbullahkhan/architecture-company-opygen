@@ -55,12 +55,12 @@ export function Navbar() {
 
           {/* Right CTA (Desktop) */}
           <div className="hidden lg:flex flex-1 justify-end pt-[22px]">
-            <button className="flex items-center gap-[18px] border-[1.5px] border-white/80 rounded-full p-1 pl-7 hover:bg-white/10 transition-colors group h-fit">
-              <span className="text-white text-[13px] font-semibold tracking-wide">Get started</span>
-              <div className="bg-white rounded-full w-[36px] h-[36px] flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            <Link href="/contact" className="flex items-center gap-[18px] border-[1.5px] border-white/80 rounded-full p-1 pl-7 hover:bg-white/10 transition-colors group h-fit">
+              <span className="text-white text-[13px] font-bold tracking-[0.05em]">Let&apos;s Talk</span>
+              <div className="bg-white rounded-full p-2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </div>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}

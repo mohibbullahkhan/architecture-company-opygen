@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const architects = [
   {
@@ -48,7 +49,8 @@ export function Architects() {
           {architects.map((arch) => {
             const isHovered = hoveredId === arch.id;
             return (
-              <div 
+              <Link 
+                href={`/architects/${arch.id}`}
                 key={arch.id}
                 className="flex flex-col md:flex-row w-full group cursor-pointer border-b md:border-none border-gray-200"
                 onMouseEnter={() => setHoveredId(arch.id)}
@@ -94,8 +96,8 @@ export function Architects() {
                     </span>
                   </div>
 
-                </div>
-              </div>
+                  </div>
+                </Link>
             );
           })}
         </div>
