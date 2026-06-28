@@ -43,7 +43,7 @@ export default function ArchitectPage({ params }: { params: { id: string } }) {
             animate={{ opacity: 1, x: 0 }}
             className="w-full md:w-3/5 pt-8"
           >
-            <h1 className="text-5xl md:text-7xl font-display italic font-bold mb-4">{architect.name}</h1>
+            <h1 className="text-5xl md:text-7xl font-sans italic font-bold mb-4">{architect.name}</h1>
             <h2 className="text-xl text-[#c0392b] font-bold uppercase tracking-widest mb-8">{architect.specialty}</h2>
             
             <p className="text-lg text-gray-600 leading-relaxed mb-12">

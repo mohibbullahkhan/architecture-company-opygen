@@ -16,8 +16,9 @@ const config: Config = {
         muted: "#6b7280",
       },
       fontFamily: {
+        sans: ["var(--font-dm-sans)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
         display: ["var(--font-playfair)", "serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
       },
       borderRadius: {
         none: "0",

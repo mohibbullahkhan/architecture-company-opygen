@@ -28,8 +28,8 @@ export default function AboutPage() {
         <div className="absolute top-[60%] right-[30%] w-2.5 h-2.5 bg-[#c0392b] rounded-full hidden md:block" />
         
         <div className="absolute bottom-16 left-12 md:left-24 z-10">
-          <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.9]">About</h1>
-          <h2 className="text-6xl md:text-8xl italic font-display text-white tracking-tight">DNOIN.INC</h2>
+          <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.9]" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>About</h1>
+          <h2 className="text-6xl md:text-8xl italic text-white tracking-tight" style={{ fontFamily: 'var(--font-playfair), serif' }}>DNOIN.INC</h2>
         </div>
       </section>
 

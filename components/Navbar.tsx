@@ -116,7 +116,7 @@ export function Navbar({ theme = 'dark' }: { theme?: 'dark' | 'light' }) {
                     <Link 
                       href={link.path} 
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-3xl font-display italic tracking-wider ${isActive ? 'text-white' : 'text-gray-400'}`}
+                      className={`text-3xl font-sans italic tracking-wider ${isActive ? 'text-white' : 'text-gray-400'}`}
                     >
                       {link.name}
                     </Link>

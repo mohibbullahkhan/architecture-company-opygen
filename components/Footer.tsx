@@ -26,7 +26,7 @@ export function Footer() {
             </div>
             
             <div className="mt-12 md:mt-0">
-              <h3 className="text-4xl md:text-6xl font-display italic text-white mb-4">
+              <h3 className="text-4xl md:text-6xl font-sans italic text-white mb-4">
                 Let&apos;s build <br/>together.
               </h3>
             </div>

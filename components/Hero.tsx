@@ -80,7 +80,7 @@ export function Hero() {
           >
             {/* Top Left Quote */}
             <div className="absolute top-[25%] md:top-[32%] left-[30px] md:left-[100px] max-w-[280px] md:max-w-[400px]">
-              <p className="text-white text-[13px] md:text-[14px] font-medium leading-[1.8] tracking-wide" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+              <p className="text-white text-[13px] md:text-[14px] font-sans font-medium leading-[1.8] tracking-wide" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
                 {slide.text.split('\n').map((line, i) => (
                   <span key={i}>{line}<br/></span>
                 ))}
@@ -90,12 +90,12 @@ export function Hero() {
             {/* Main Headline */}
             <div className="absolute bottom-[20%] md:bottom-[22%] left-[30px] md:left-[100px]">
               <h1 className="flex flex-col">
-                <span className="text-white text-[70px] sm:text-[90px] md:text-[150px] font-black font-sans tracking-tighter leading-[0.8] mb-2 md:mb-2" style={{ textShadow: '0 4px 16px rgba(0,0,0,0.4)' }}>
+                <span className="text-white text-[70px] sm:text-[90px] md:text-[150px] font-black tracking-tighter leading-[0.8] mb-2 md:mb-2" style={{ fontFamily: 'var(--font-inter), sans-serif', textShadow: '0 4px 16px rgba(0,0,0,0.4)' }}>
                   {slide.title1}
                 </span>
                 <div className="flex items-end pl-[30px] sm:pl-[50px] md:pl-[150px]">
-                  <span className="text-white text-[80px] sm:text-[100px] md:text-[170px] font-display italic tracking-tighter leading-[0.8] relative pr-3 md:pr-6" style={{ textShadow: '0 4px 16px rgba(0,0,0,0.4)' }}>
-                    {slide.title2}<span className="text-[#e74c3c] absolute bottom-[10px] md:bottom-[24px] -right-[5px] md:-right-[12px] text-[20px] md:text-[40px] leading-none font-sans font-bold">.</span>
+                  <span className="text-white text-[80px] sm:text-[100px] md:text-[170px] italic tracking-tighter leading-[0.8] relative pr-3 md:pr-6" style={{ fontFamily: 'var(--font-playfair), serif', textShadow: '0 4px 16px rgba(0,0,0,0.4)' }}>
+                    {slide.title2}<span className="text-[#e74c3c] absolute bottom-[10px] md:bottom-[24px] -right-[5px] md:-right-[12px] text-[20px] md:text-[40px] leading-none font-bold" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>.</span>
                   </span>
                   
                   <Link href="/contact" className="relative -top-[4px] md:-top-[16px] left-[10px] md:left-[20px] flex items-center gap-[12px] md:gap-[24px] border-[1.5px] border-white/80 rounded-full p-1 md:p-1.5 pl-4 md:pl-8 hover:bg-white/10 transition-colors group bg-white/5 backdrop-blur-sm shadow-lg">
@@ -113,7 +113,7 @@ export function Hero() {
         {/* Static Bottom Right Text */}
         <div className="absolute bottom-[24%] right-[100px] max-w-[300px] hidden lg:block">
           <h3 className="text-white font-bold text-[34px] font-sans leading-[1.1] mb-4">Architecture<br/>can mean</h3>
-          <p className="text-gray-200 text-[14px] font-medium leading-relaxed opacity-90">
+          <p className="text-gray-200 text-[14px] font-sans font-medium leading-relaxed opacity-90">
             A general term to describe buildings<br/>
             and other physical structures.
           </p>

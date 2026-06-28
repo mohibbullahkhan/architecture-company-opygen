@@ -118,8 +118,8 @@ export function RecentProjects() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
             >
-              <span className="text-[50px] md:text-[75px] font-black text-[#1a1a1a] font-sans tracking-tighter">Recent</span>
-              <span className="text-[55px] md:text-[85px] font-display italic text-[#1a1a1a] tracking-tight">Projects</span>
+              <span className="text-[50px] md:text-[75px] font-black text-[#1a1a1a] tracking-tighter" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>Recent</span>
+              <span className="text-[55px] md:text-[85px] italic text-[#1a1a1a] tracking-tight" style={{ fontFamily: 'var(--font-playfair), serif' }}>Projects</span>
             </motion.h2>
           </div>
 

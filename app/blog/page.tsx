@@ -29,8 +29,8 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-black/60" />
         
         <div className="relative z-10 text-center flex flex-col items-center pt-24">
-          <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-2">Our</h1>
-          <h2 className="text-5xl md:text-7xl italic font-display text-white tracking-tight">Journal</h2>
+          <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-2" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>Our</h1>
+          <h2 className="text-5xl md:text-7xl italic text-white tracking-tight" style={{ fontFamily: 'var(--font-playfair), serif' }}>Journal</h2>
           <p className="mt-6 text-sm text-white/70 font-medium tracking-wide">
             Insights, stories and architecture news
           </p>
@@ -144,7 +144,7 @@ export default function BlogPage() {
             Stay Updated
           </h3>
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">Architecture</h2>
-          <h2 className="text-5xl md:text-6xl italic font-display text-gray-900 mb-6">Insights</h2>
+          <h2 className="text-5xl md:text-6xl italic font-sans text-gray-900 mb-6">Insights</h2>
           
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mt-10">
             <input 

@@ -44,8 +44,8 @@ export default function ContactPage() {
         <div className="absolute top-[70%] left-[30%] w-1.5 h-1.5 bg-[#c0392b] rounded-full hidden md:block" />
         
         <div className="absolute bottom-12 left-12 md:left-24 z-10">
-          <h1 className="text-6xl md:text-7xl font-bold text-white tracking-tighter leading-[0.9]">Get In</h1>
-          <h2 className="text-6xl md:text-7xl italic font-display text-white tracking-tight">Touch</h2>
+          <h1 className="text-6xl md:text-7xl font-bold text-white tracking-tighter leading-[0.9]" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>Get In</h1>
+          <h2 className="text-6xl md:text-7xl italic text-white tracking-tight" style={{ fontFamily: 'var(--font-playfair), serif' }}>Touch</h2>
         </div>
       </section>
 

@@ -39,8 +39,8 @@ export default function ProjectsPage() {
           className="relative z-10 text-center flex flex-col items-center pt-24 md:pt-32"
         >
           <div className="flex flex-col mb-4">
-            <h1 className="text-5xl md:text-[80px] font-black text-white tracking-tighter leading-[0.9]">Our</h1>
-            <h2 className="text-5xl md:text-[90px] italic font-display text-white tracking-tight leading-[0.9] pr-4">Projects</h2>
+            <h1 className="text-5xl md:text-[80px] font-black text-white tracking-tighter leading-[0.9]" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>Our</h1>
+            <h2 className="text-5xl md:text-[90px] italic text-white tracking-tight leading-[0.9] pr-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>Projects</h2>
           </div>
           <div className="mt-4 text-[11px] text-white/80 font-bold tracking-[0.2em] uppercase flex items-center gap-3">
             <span>Home</span> <span className="w-4 h-[1px] bg-white/50" /> <span>Projects</span>

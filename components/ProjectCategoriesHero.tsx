@@ -92,11 +92,11 @@ export function ProjectCategoriesHero({
             </div>
             
             <h2 className="flex flex-col mb-10">
-              <span className="text-5xl sm:text-6xl md:text-[70px] lg:text-[90px] font-black text-white font-sans tracking-tighter leading-[0.9]">
+              <span className="text-5xl sm:text-6xl md:text-[70px] lg:text-[90px] font-black text-white tracking-tighter leading-[0.9]" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>
                 {line1}
               </span>
-              <span className="text-5xl sm:text-6xl md:text-[75px] lg:text-[100px] font-display italic text-white tracking-tight leading-[0.9] pl-6 md:pl-10">
-                {line2}<span className="text-[#e74c3c] font-sans font-black">.</span>
+              <span className="text-5xl sm:text-6xl md:text-[75px] lg:text-[100px] italic text-white tracking-tight leading-[0.9] pl-6 md:pl-10" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+                {line2}<span className="text-[#e74c3c] font-black" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>.</span>
               </span>
             </h2>
 

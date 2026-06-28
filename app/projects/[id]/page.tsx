@@ -39,7 +39,7 @@ export default function SingleProjectPage({ params }: { params: { id: string } }
         <div className="absolute bottom-16 left-12 md:left-24 z-10 flex flex-col items-start">
           <div className="flex gap-4 items-center">
             <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[0.9]">{project.name.split(' ')[0]}</h1>
-            <h2 className="text-5xl md:text-7xl italic font-display text-white tracking-tight">{project.name.split(' ').slice(1).join(' ')}</h2>
+            <h2 className="text-5xl md:text-7xl italic font-sans text-white tracking-tight">{project.name.split(' ').slice(1).join(' ')}</h2>
           </div>
           <p className="text-sm text-white/70 tracking-wide mt-4">
             {project.location}
